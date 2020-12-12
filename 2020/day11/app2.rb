@@ -24,7 +24,7 @@ def occupied_visibile_seats(map, x, y)
     (-1..1).each do |y_dir|
       next if x_dir == 0 && y_dir == 0
       
-      count += 1if first_seat_in_dir(map, x, y, x_dir, y_dir) == '#'
+      count += 1 if first_seat_in_dir(map, x, y, x_dir, y_dir) == '#'
     end
   end
   count
