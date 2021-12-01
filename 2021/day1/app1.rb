@@ -1,3 +1,5 @@
+require '../../lib/common.rb'
+
 def read_depth(filename)
   File.readlines(filename).map { |l| l.to_i }
 end
@@ -12,11 +14,7 @@ def calc_increases(filename)
   increases
 end
 
-test_result = calc_increases('test.txt')
-unless test_result == 7
-  puts "Test result failed, expected 7 received: #{test_result}"
-  exit 1
-end
+assert_equal(7, calc_increases('test.txt'), 'Test result failed')
 
 result = calc_increases('input1.txt')
 puts "Received result: #{result}"
